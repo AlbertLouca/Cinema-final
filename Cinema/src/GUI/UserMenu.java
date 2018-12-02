@@ -24,7 +24,6 @@ public class userMenu extends JFrame
     JButton chanegePassword;
     JButton logout;
     JLabel welcomeLabel;
-    JButton exit;
     JPanel jp;
  
     
