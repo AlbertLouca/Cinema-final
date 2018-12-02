@@ -60,7 +60,7 @@ public class userMenu extends JFrame
         jp.add(changeUserName);
         jp.add(chanegePassword);
         jp.add(logout);
-        jp.add(exit);
+
         
         
         setDefaultCloseOperation(EXIT_ON_CLOSE);
