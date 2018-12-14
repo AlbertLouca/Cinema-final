@@ -4,11 +4,10 @@
  * and open the template in the editor.
  */
 package GUI;
-import Users.User;
+import Users.User_Data;
 import java.util.ArrayList;
 import javax.swing.*;
 
-import static cinema.Cinema.UserLib;
 import static cinema.Cinema.hash;
 import static cinema.Cinema.savehash;
 import java.awt.event.ActionEvent;
@@ -34,7 +33,7 @@ public class GivePower extends JFrame{
 
    public GivePower(){
        for(String x:hash.keySet()){
-           names.add(x);
+           names.add(hash.get(x).getName());
            
            
            
@@ -61,12 +60,14 @@ submit.setBounds(300,500,300,50);
 
         @Override
         public void actionPerformed(ActionEvent ae) {
-           User x=  hash.get(list.getSelectedValue());
+           User x=  hash.get(list.getSelectedValue().toString());
            x.givePower();
            if(x.getPower())
                JOptionPane.showMessageDialog(null, "success");
             try {
                 savehash();
+                User_Data ud=new User_Data();
+                ud.save();
             } catch (IOException ex) {
                 Logger.getLogger(GivePower.class.getName()).log(Level.SEVERE, null, ex);
             }
