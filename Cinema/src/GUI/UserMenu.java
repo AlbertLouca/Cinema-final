@@ -1,18 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package GUI;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+package GUI;
+        
+import Users.User;
+import java.awt.FlowLayout;
 import javax.swing.*;
-/**
- *
- * @author MHDSA
- */
+
 public class userMenu extends JFrame
 {
 
@@ -34,25 +26,33 @@ public class userMenu extends JFrame
     //JButton displayHallSeats;
     //JCheckBox [][]reserveSeats;
 
-    public userMenu() 
+    public userMenu(User user) 
     {
         
         setTitle("User menu");
-        setSize(400, 600);
-        jp=new JPanel(new FlowLayout());
+       setBounds(400,100,400,250);
+        jp=new JPanel(null);
         add(jp);
         displayNowPlay=new JButton("Now Playing");
+        displayNowPlay.setBounds(10,10,150,30);
+        
         displayUpcoming=new JButton("Upcoming");
+        displayUpcoming.setBounds(180,10,150,30);
         schedule=new JButton("Schedule");
+        schedule.setBounds(10,50,150,30);
         reserve=new JButton("Reserve");
-        changeUserName=new JButton("Change UserName");
-        chanegePassword=new JButton("Change PAssword");
+        reserve.setBounds(180,50,150,30);
+        changeUserName=new JButton("Change Name");
+        changeUserName.setBounds(10,90,150,30);
+        chanegePassword=new JButton("Change Password");
+        chanegePassword.setBounds(180,90,150,30);
         logout=new JButton("Log out");
-        welcomeLabel=new JLabel("Welcome,...");
+        logout.setBounds(110,140,150,30);
+      //  welcomeLabel=new JLabel("Welcome,...");
         //welcomeLabel.setBounds(550, 0, 550, 30);
 
         
-        jp.add(welcomeLabel);
+       // jp.add(welcomeLabel);
         jp.add(displayNowPlay);
         jp.add(displayUpcoming);
         jp.add(schedule);
