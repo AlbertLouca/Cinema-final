@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 public class User implements Serializable {
         protected String username;
+private String name;
+public String gender;
 
     protected String password;
 protected Boolean isPowered;
@@ -31,9 +33,16 @@ public User ()
     public int getID() {
         return ID;
     }
+public String getName(){
+    return name;
+}
 
-  
-    
+    public boolean setname(String name){
+        if(name.isEmpty())
+            return false;
+        this.name=name;
+        return true;
+    }
 
     public String getUsername() {
         return username;
