@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import Users.User;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,7 +25,7 @@ public class AdminMenu extends JFrame{
              final JButton change_username;
               final JButton change_password;
               final JButton give_power;
-   public AdminMenu(){
+   public AdminMenu(User user){
        setTitle("Admin Menu");
         JPanel j1=new JPanel();
         
@@ -50,6 +51,7 @@ public class AdminMenu extends JFrame{
               j1.add(change_username);
               j1.add(change_password);
               j1.add(give_power);
+              give_power.addActionListener(new myh());
                 this.setDefaultCloseOperation(EXIT_ON_CLOSE);
    }
     class myh implements ActionListener{
@@ -59,6 +61,8 @@ public class AdminMenu extends JFrame{
          Object ButtonPressed =ae.getSource();
             if(ButtonPressed.equals(give_power)){
               //  JOptionPane.showOptionDialog(null, ButtonPressed, string, WIDTH, WIDTH, icon, os, ButtonPressed)
+                GivePower x=new GivePower();
+                x.setVisible(true);
                 
                 
                 
