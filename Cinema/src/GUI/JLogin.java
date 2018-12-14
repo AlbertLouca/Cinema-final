@@ -8,7 +8,6 @@ package GUI;
 
 
 
-import Users.User;
 
 import static cinema.Cinema.hash;
 import static cinema.Cinema.loadhash;
