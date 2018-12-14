@@ -4,37 +4,37 @@
  * and open the template in the editor.
  */
 package GUI;
-
-
-import java.awt.Color;
-import java.awt.Graphics;
-
-
 import java.awt.Image;
+
+
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
+
 
 /**
  *
  * @author Chadi N. Louca
  */
 public class MainMenu extends JFrame {
-private Graphics myg;
+//private Graphics myg;
     JPanel j1;
     final JButton reg;
     final JButton log;
-    
+    ImageIcon background_image;
     public MainMenu(String title) throws IOException{
-       
+       background_image=new ImageIcon("C:\\Users\\Chadi N. Louca\\Desktop\\2c6643280ec89c10e0f473807dd3de93.jpg");
+       Image img=background_image.getImage();
+       Image temp_img=img.getScaledInstance(500,400, Image.SCALE_SMOOTH);
+
+       background_image=new ImageIcon(temp_img);
+       JLabel background=new JLabel("",background_image,JLabel.CENTER);
+       background.setBounds(0,0,500,400);
+      this.add(background);
+
+
          setTitle(title);
            j1=new JPanel();
         
@@ -75,20 +75,5 @@ private Graphics myg;
       
         }       
     }
-    public void paint(Graphics g){
-        
-        
-        
-         myg=g;
-     
-       super.paint(g);
-         BufferedImage img;
-    try {
-        img = ImageIO.read(new File("C:\\Users\\Chadi N. Louca\\Desktop\\2c6643280ec89c10e0f473807dd3de93.jpg"));
-         g.drawImage(img,0,0,null);
-    } catch (IOException ex) {
-        Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
-    }
-      
-    }
+
 }
