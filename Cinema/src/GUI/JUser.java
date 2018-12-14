@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package GUI;
-import Users.User;
 import Users.User_Data;
 import static cinema.Cinema.UserLib;
 import static cinema.Cinema.hash;
@@ -123,12 +122,13 @@ boolean istaken =false;
                 u.setname(rn.getText());               // User_Data as=new User_Data();
                 //as.save();
                  UserLib.add(u);
+                
                  hash.put(u.getUsername(),u);
     try {
         savehash();
         
-       // User_Data x=new User_Data();
-       // x.save();
+        User_Data x=new User_Data();
+        x.save();
         JOptionPane.showMessageDialog(null,"User Created Successfully");
     } catch (IOException ex) {
        JOptionPane.showMessageDialog(null, "failed to save the new User");
